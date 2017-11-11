@@ -35,6 +35,12 @@
                         </a>
 
                         <ul class="dropdown-menu">
+                            @can('browse-admin')
+                                <li>
+                                    <a href="{{ route('admin.index') }}">Admin</a>
+                                </li>
+                            @endcan
+                            <li role="separator" class="divider"></li>
                             <li>
                                 <a href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
