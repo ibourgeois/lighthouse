@@ -15,6 +15,13 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Auth::routes();
 
+Route::resource('/projects', 'ProjectController');
+
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('/', 'AdminController');
+    Route::resource('/projects', 'ProjectController');
+    // Route::resource('/users', 'UserController');
+    // Route::resource('/teams', 'TeamsController');
+    // Route::resource('/servers', 'ServersController');
+    // Route::resource('/identities', 'IdentityController');
 });

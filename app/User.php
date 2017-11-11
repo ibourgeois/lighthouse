@@ -40,4 +40,20 @@ class User extends Authenticatable
     {
         return $this->first_name.' '.$this->last_name;
     }
+
+    /**
+     * Get the projects owned by the user.
+     */
+    public function ownedProjects()
+    {
+        return $this->hasMany('Lighthouse\Project', 'owner_id');
+    }
+
+    /**
+     * Get the users projects
+     */
+    public function projects()
+    {
+        return $this->belongsToMany('Lighthouse\Project');
+    }
 }
