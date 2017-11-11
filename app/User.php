@@ -30,11 +30,12 @@ class User extends Authenticatable
     /**
      * Get the user's full name.
      *
-     * @param  string  $value
+     * @param string $value
+     *
      * @return string
      */
     public function getNameAttribute()
     {
-        return $this->first_name . ' ' . $this->last_name;
+        return $this->first_name.' '.$this->last_name;
     }
 }
