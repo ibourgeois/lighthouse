@@ -6,6 +6,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.0.2] - 2017-11-11
+### Added
+- Role Seeder
+- Admin Role
+- Admin Dashboard View
+- Interactive Admin User Seeder
+
+### Changed
+- App Layout
+
 ## [0.0.1] - 2017-11-10
 ### Added
 - MIT License
@@ -17,5 +27,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Home route
 - Split Name into First and Last Name
 
-[Unreleased]: https://github.com/ibourgeois/lighthouse/compare/0.0.1...HEAD
+[Unreleased]: https://github.com/ibourgeois/lighthouse/compare/0.0.2...HEAD
+[0.0.2]: https://github.com/iBourgeois/lighthouse/compare/0.0.1...0.0.2
 [0.0.1]: https://github.com/iBourgeois/lighthouse/compare/3b9fbdb...0.0.1
