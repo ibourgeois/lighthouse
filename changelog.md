@@ -18,4 +18,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Split Name into First and Last Name
 
 [Unreleased]: https://github.com/ibourgeois/lighthouse/compare/0.0.1...HEAD
-[0.0.1]: https://github.com/iBourgeois/lighthouse/compare/3b9fbdb...0877f41e6ea1c2a19510f2df6a0ff5bcab47d295
+[0.0.1]: https://github.com/iBourgeois/lighthouse/compare/3b9fbdb...0.0.1
