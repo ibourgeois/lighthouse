@@ -2,8 +2,8 @@
 
 namespace Lighthouse\Http\Controllers\Auth;
 
-use Lighthouse\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
+use Lighthouse\Http\Controllers\Controller;
 
 class ResetPasswordController extends Controller
 {
