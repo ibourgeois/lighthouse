@@ -13,9 +13,9 @@ class AdminSeeder extends Seeder
     {
         $user = Lighthouse\User::create([
             'first_name' => $this->command->ask('First Name'),
-            'last_name' => $this->command->ask('Last Name'),
-            'email' => $this->command->ask('Email Address'),
-            'password' => bcrypt($this->command->secret('Password'))
+            'last_name'  => $this->command->ask('Last Name'),
+            'email'      => $this->command->ask('Email Address'),
+            'password'   => bcrypt($this->command->secret('Password')),
         ]);
 
         $user->assign('admin');

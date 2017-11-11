@@ -17,20 +17,19 @@ class RoleSeeder extends Seeder
         $this->addPermission('admin', 'browse-admin');
     }
 
-
     private function createRole($name, $title)
     {
         \Silber\Bouncer\Database\Role::create([
-            'name' => $name,
-            'title' => $title
+            'name'  => $name,
+            'title' => $title,
         ]);
     }
 
     private function createAbility($name, $title)
     {
         \Silber\Bouncer\Database\Ability::create([
-            'name' => $name,
-            'title' => $title
+            'name'  => $name,
+            'title' => $title,
         ]);
     }
 
