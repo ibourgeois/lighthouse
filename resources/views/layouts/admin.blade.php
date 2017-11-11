@@ -16,10 +16,15 @@
 <body>
     <div id="app">
         @include('layouts.partials.nav')
-        <div class="container">
+        <div class="container-fluid content">
             @include('layouts.partials.alerts')
             <div class="row">
-                @yield('content')
+                <div class="col-md-2">
+                    @include('layouts.partials.admin-nav')
+                </div>
+                <div class="col-md-10">
+                    @yield('content')
+                </div>
             </div>
         </div>
     </div>
