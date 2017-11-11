@@ -2,8 +2,8 @@
 
 namespace Lighthouse\Http\Controllers\Auth;
 
-use Lighthouse\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Lighthouse\Http\Controllers\Controller;
 
 class LoginController extends Controller
 {
