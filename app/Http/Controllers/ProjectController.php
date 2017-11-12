@@ -12,9 +12,15 @@ class ProjectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('admin.projects.index');
+        if ($request->route()->getName() === 'admin.projects.index') {
+            $projects = Project::paginate(10);
+
+            return view('admin.projects.index')->with(compact('projects'));
+        } else {
+            return view('projects.index');
+        }
     }
 
     /**
@@ -22,9 +28,13 @@ class ProjectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        if ($request->route()->getName() === 'admin.projects.create') {
+            return view('admin.projects.create');
+        } else {
+            return view('projects.create');
+        }
     }
 
     /**
@@ -58,9 +68,13 @@ class ProjectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function edit(Project $project)
+    public function edit(Request $request, Project $project)
     {
-        //
+        if ($request->route()->getName() === 'admin.projects.edit') {
+            return view('admin.projects.edit');
+        } else {
+            return view('projects.edit');
+        }
     }
 
     /**

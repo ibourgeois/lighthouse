@@ -16,7 +16,7 @@
 <body>
     <div id="app">
         @include('layouts.partials.nav')
-        <div class="container-fluid content">
+        <div class="container content">
             @include('layouts.partials.alerts')
             <div class="row">
                 @yield('content')

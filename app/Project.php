@@ -24,4 +24,12 @@ class Project extends Model
      * @var array
      */
     protected $dates = ['deleted_at'];
+
+    /**
+     * Get the project owner.
+     */
+    public function owner()
+    {
+        return $this->belongsTo('Lighthouse\User', 'owner_id');
+    }
 }

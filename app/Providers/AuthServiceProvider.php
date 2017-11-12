@@ -2,6 +2,7 @@
 
 namespace Lighthouse\Providers;
 
+use Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider
@@ -12,7 +13,8 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'Lighthouse\Model' => 'Lighthouse\Policies\ModelPolicy',
+        'Lighthouse\Project' => 'Lighthouse\Policies\ProjectPolicy',
+        'Lighthouse\Profile' => 'Lighthouse\Policies\ProfilePolicy',
     ];
 
     /**
@@ -24,6 +26,9 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        // give admins access to everything
+        Gate::before(function ($user) {
+            return $user->isAn('admin');
+        });
     }
 }
