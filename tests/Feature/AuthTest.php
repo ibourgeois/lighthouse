@@ -21,6 +21,5 @@ class AuthTest extends TestCase
         $this->signIn();
         $response = $this->get('/');
         $response->assertStatus(200);
-
     }
 }
