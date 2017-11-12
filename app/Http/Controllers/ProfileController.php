@@ -2,10 +2,9 @@
 
 namespace Lighthouse\Http\Controllers;
 
-use Lighthouse\User;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class ProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::paginate(10);
-        return view('admin.users.index')->with(compact('users'));
+        //
     }
 
     /**
@@ -25,7 +23,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.users.create');
+        //
     }
 
     /**

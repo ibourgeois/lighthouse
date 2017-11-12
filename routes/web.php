@@ -16,6 +16,7 @@ Route::get('/', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::resource('/projects', 'ProjectController');
+Route::resource('/profile', 'ProfileController');
 
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('/', 'AdminController');

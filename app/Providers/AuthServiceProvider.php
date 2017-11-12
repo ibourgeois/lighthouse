@@ -14,6 +14,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         'Lighthouse\Project' => 'Lighthouse\Policies\ProjectPolicy',
+        'Lighthouse\Profile' => 'Lighthouse\Policies\ProfilePolicy',
     ];
 
     /**
