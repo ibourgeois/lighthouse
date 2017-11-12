@@ -18,7 +18,7 @@ Auth::routes();
 Route::resource('/projects', 'ProjectController');
 Route::resource('/profile', 'ProfileController');
 
-Route::prefix('admin')->name('admin.')->group(function () {
+Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(function () {
     Route::resource('/', 'AdminController');
     Route::resource('/projects', 'ProjectController');
     Route::resource('/users', 'UserController');
