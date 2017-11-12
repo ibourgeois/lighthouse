@@ -6,6 +6,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.0.3] - 2017-11-12
+### Added
+- User index view in Admin Dashboard
+- Project index view in Admin Dashboard
+- Unit Tests with Code Coverage Reporting
+
+### Security
+- Prevent unauthorized access to Admin Dashboard
+
 ## [0.0.2] - 2017-11-11
 ### Added
 - Role Seeder
@@ -27,6 +36,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Home route
 - Split Name into First and Last Name
 
-[Unreleased]: https://github.com/ibourgeois/lighthouse/compare/0.0.2...HEAD
+[Unreleased]: https://github.com/ibourgeois/lighthouse/compare/0.0.3...HEAD
+[0.0.3]: https://github.com/iBourgeois/lighthouse/compare/0.0.2...0.0.3
 [0.0.2]: https://github.com/iBourgeois/lighthouse/compare/0.0.1...0.0.2
 [0.0.1]: https://github.com/iBourgeois/lighthouse/compare/3b9fbdb...0.0.1
