@@ -32,5 +32,4 @@ class Project extends Model
     {
         return $this->belongsTo('Lighthouse\User', 'owner_id');
     }
-
 }

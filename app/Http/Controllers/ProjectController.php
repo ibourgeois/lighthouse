@@ -16,6 +16,7 @@ class ProjectController extends Controller
     {
         if ($request->route()->getName() === 'admin.projects.index') {
             $projects = Project::paginate(10);
+
             return view('admin.projects.index')->with(compact('projects'));
         } else {
             return view('projects.index');

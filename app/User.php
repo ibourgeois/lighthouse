@@ -50,7 +50,7 @@ class User extends Authenticatable
     }
 
     /**
-     * Get the users projects
+     * Get the users projects.
      */
     public function projects()
     {
