@@ -2,12 +2,11 @@
 
 namespace Tests\Feature;
 
-use Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Tests\TestCase;
 
 class AuthTest extends TestCase
 {
-
     use DatabaseMigrations;
 
     /** @test */
@@ -21,6 +20,5 @@ class AuthTest extends TestCase
         $this->signIn();
         $response = $this->get('/');
         $response->assertStatus(200);
-
     }
 }
