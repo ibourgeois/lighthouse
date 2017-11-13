@@ -16,7 +16,7 @@ class AdminController extends Controller
         return view('admin.index');
     }
 
-    /**
+    /*
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -26,7 +26,7 @@ class AdminController extends Controller
     //     //
     // }
 
-    /**
+    /*
      * Store a newly created resource in storage.
      *
      * @param \Illuminate\Http\Request $request
@@ -38,7 +38,7 @@ class AdminController extends Controller
     //     //
     // }
 
-    /**
+    /*
      * Display the specified resource.
      *
      * @param int $id
@@ -50,7 +50,7 @@ class AdminController extends Controller
     //     //
     // }
 
-    /**
+    /*
      * Show the form for editing the specified resource.
      *
      * @param int $id
@@ -62,7 +62,7 @@ class AdminController extends Controller
     //     //
     // }
 
-    /**
+    /*
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
@@ -75,7 +75,7 @@ class AdminController extends Controller
     //     //
     // }
 
-    /**
+    /*
      * Remove the specified resource from storage.
      *
      * @param int $id
