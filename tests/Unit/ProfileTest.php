@@ -4,14 +4,14 @@ namespace Tests\Unit;
 
 use Tests\TestCase;
 
-class ExampleTest extends TestCase
+class ProfileTest extends TestCase
 {
     /**
      * A basic test example.
      *
      * @return void
      */
-    public function testBasicTest()
+    public function testExample()
     {
         $this->assertTrue(true);
     }

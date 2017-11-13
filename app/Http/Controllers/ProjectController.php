@@ -44,10 +44,10 @@ class ProjectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
+    // public function store(Request $request)
+    // {
+    //     //
+    // }
 
     /**
      * Display the specified resource.
@@ -56,10 +56,10 @@ class ProjectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function show(Project $project)
-    {
-        //
-    }
+    // public function show(Project $project)
+    // {
+    //     //
+    // }
 
     /**
      * Show the form for editing the specified resource.
@@ -77,7 +77,7 @@ class ProjectController extends Controller
         }
     }
 
-    /**
+    /*
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
@@ -85,20 +85,20 @@ class ProjectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Project $project)
-    {
-        //
-    }
+    // public function update(Request $request, Project $project)
+    // {
+    //     //
+    // }
 
-    /**
+    /*
      * Remove the specified resource from storage.
      *
      * @param \Lighthouse\Project $project
      *
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Project $project)
-    {
-        //
-    }
+    // public function destroy(Project $project)
+    // {
+    //     //
+    // }
 }

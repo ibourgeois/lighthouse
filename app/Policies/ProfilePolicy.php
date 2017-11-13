@@ -45,7 +45,7 @@ class ProfilePolicy
      */
     public function update(User $user, Profile $profile)
     {
-        //
+        return $profile->user_id == $user->id;
     }
 
     /**
@@ -58,6 +58,6 @@ class ProfilePolicy
      */
     public function delete(User $user, Profile $profile)
     {
-        //
+        return $profile->user_id == $user->id;
     }
 }
