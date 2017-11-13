@@ -15,14 +15,16 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::resource('/projects', 'ProjectController');
-Route::resource('/profile', 'ProfileController');
+Route::resource('/projects', 'ProjectController', ['only' => ['index', 'show', 'edit', 'destroy']]);
+Route::resource('/profile', 'ProfileController', ['only' => ['show']]);
 
-Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(function () {
-    Route::resource('/', 'AdminController');
-    Route::resource('/projects', 'ProjectController');
-    Route::resource('/users', 'UserController');
-    // Route::resource('/teams', 'TeamsController');
-    // Route::resource('/servers', 'ServersController');
-    // Route::resource('/identities', 'IdentityController');
-});
+Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(
+    function () {
+        Route::resource('/', 'AdminController', ['only' => ['index']]);
+        Route::resource('/projects', 'ProjectController', ['only' => ['index', 'create']]);
+        Route::resource('/users', 'UserController', ['only' => ['index', 'create', 'edit', 'destroy']]);
+        // Route::resource('/teams', 'TeamsController');
+        // Route::resource('/servers', 'ServersController');
+        // Route::resource('/identities', 'IdentityController');
+    }
+);
