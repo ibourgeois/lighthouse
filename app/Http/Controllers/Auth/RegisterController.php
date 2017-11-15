@@ -2,11 +2,11 @@
 
 namespace Lighthouse\Http\Controllers\Auth;
 
-use Lighthouse\User;
-use Lighthouse\Profile;
+use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Validator;
 use Lighthouse\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\RegistersUsers;
+use Lighthouse\Profile;
+use Lighthouse\User;
 
 class RegisterController extends Controller
 {

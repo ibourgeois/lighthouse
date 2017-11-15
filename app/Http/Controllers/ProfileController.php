@@ -2,9 +2,9 @@
 
 namespace Lighthouse\Http\Controllers;
 
-use Lighthouse\User;
-use Lighthouse\Profile;
 use Illuminate\Http\Request;
+use Lighthouse\Profile;
+use Lighthouse\User;
 
 class ProfileController extends Controller
 {
@@ -54,7 +54,6 @@ class ProfileController extends Controller
         $user = User::find(Profile::find($id)->user_id);
 
         return view('profiles.show')->with(compact('user'));
-
     }
 
     /*

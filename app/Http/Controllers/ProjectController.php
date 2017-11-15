@@ -2,10 +2,9 @@
 
 namespace Lighthouse\Http\Controllers;
 
-use Lighthouse\User;
-use Lighthouse\Project;
 use Illuminate\Http\Request;
 use Lighthouse\Http\Requests\ProjectRequest;
+use Lighthouse\Project;
 
 class ProjectController extends Controller
 {
@@ -22,6 +21,7 @@ class ProjectController extends Controller
             return view('admin.projects.index')->with(compact('projects'));
         } else {
             $projects = $request->user()->ownedProjects()->orderBy('updated_at', 'desc')->paginate(10);
+
             return view('projects.index')->with(compact('projects'));
         }
     }
@@ -50,7 +50,6 @@ class ProjectController extends Controller
     public function store(ProjectRequest $request)
     {
         if ($request->route()->getName() === 'admin.projects.create') {
-
         } else {
             $project = Project::create([
                 'name'          => $request->name,

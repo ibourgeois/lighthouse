@@ -2,9 +2,8 @@
 
 namespace Lighthouse\Http\Requests;
 
-use Lighthouse\Project;
-use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
+use Lighthouse\Project;
 
 class ProjectRequest extends FormRequest
 {
@@ -19,6 +18,7 @@ class ProjectRequest extends FormRequest
             return true;
         } else {
             $project = $this->route('project');
+
             return $project && $this->user()->can('update', $project);
         }
     }
@@ -31,7 +31,7 @@ class ProjectRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'min:2|max:255|required|alpha_dash|unique:projects,id,'.$this->id
+            'name' => 'min:2|max:255|required|alpha_dash|unique:projects,id,'.$this->id,
         ];
     }
 }
