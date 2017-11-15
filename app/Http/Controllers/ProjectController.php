@@ -95,7 +95,7 @@ class ProjectController extends Controller
         }
     }
 
-    /**
+    /*
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
@@ -112,7 +112,7 @@ class ProjectController extends Controller
         return redirect(route('projects.show', $project))->with('success', 'Project updated successfully!');
     }
 
-    /**
+    /*
      * Remove the specified resource from storage.
      *
      * @param \Lighthouse\Project $project
