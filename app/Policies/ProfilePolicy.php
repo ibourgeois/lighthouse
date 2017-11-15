@@ -20,7 +20,12 @@ class ProfilePolicy
      */
     public function view(User $user, Profile $profile)
     {
-        //
+        // if user owns profile
+        if ($user->id === $profile->user_id) {
+            return true;
+        }
+
+        return false;
     }
 
     /**

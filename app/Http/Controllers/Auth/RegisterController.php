@@ -2,10 +2,11 @@
 
 namespace Lighthouse\Http\Controllers\Auth;
 
-use Illuminate\Foundation\Auth\RegistersUsers;
+use Lighthouse\User;
+use Lighthouse\Profile;
 use Illuminate\Support\Facades\Validator;
 use Lighthouse\Http\Controllers\Controller;
-use Lighthouse\User;
+use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
 {
@@ -65,11 +66,15 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'first_name' => $data['first_name'],
             'last_name'  => $data['last_name'],
             'email'      => $data['email'],
             'password'   => bcrypt($data['password']),
+        ]);
+
+        return Profile::create([
+            'user_id' => $user->id,
         ]);
     }
 }
