@@ -3,6 +3,7 @@
 namespace Lighthouse\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Lighthouse\Http\Requests\ProjectRequest;
 use Lighthouse\Project;
 
 class ProjectController extends Controller
@@ -19,7 +20,9 @@ class ProjectController extends Controller
 
             return view('admin.projects.index')->with(compact('projects'));
         } else {
-            return view('projects.index');
+            $projects = $request->user()->ownedProjects()->orderBy('updated_at', 'desc')->paginate(10);
+
+            return view('projects.index')->with(compact('projects'));
         }
     }
 
@@ -44,10 +47,20 @@ class ProjectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    // public function store(Request $request)
-    // {
-    //     //
-    // }
+    public function store(ProjectRequest $request)
+    {
+        if ($request->route()->getName() === 'admin.projects.create') {
+        } else {
+            $project = Project::create([
+                'name'          => $request->name,
+                'slug'          => str_slug($request->name),
+                'description'   => $request->description,
+                'owner_id'      => $request->user()->id,
+            ]);
+
+            return redirect('/projects');
+        }
+    }
 
     /**
      * Display the specified resource.
@@ -56,10 +69,14 @@ class ProjectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    // public function show(Project $project)
-    // {
-    //     //
-    // }
+    public function show(Request $request, Project $project)
+    {
+        if ($request->route()->getName() === 'admin.projects.show') {
+            return view('admin.projects.show');
+        } else {
+            return view('projects.show')->with(compact('project'));
+        }
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -73,7 +90,7 @@ class ProjectController extends Controller
         if ($request->route()->getName() === 'admin.projects.edit') {
             return view('admin.projects.edit');
         } else {
-            return view('projects.edit');
+            return view('projects.edit')->with(compact('project'));
         }
     }
 
@@ -85,10 +102,14 @@ class ProjectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    // public function update(Request $request, Project $project)
-    // {
-    //     //
-    // }
+    public function update(ProjectRequest $request, Project $project)
+    {
+        $project->name = $request->name;
+        $project->description = $request->description;
+        $project->save();
+
+        return redirect(route('projects.show', $project))->with('success', 'Project updated successfully!');
+    }
 
     /*
      * Remove the specified resource from storage.

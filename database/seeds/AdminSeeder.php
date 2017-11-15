@@ -18,6 +18,10 @@ class AdminSeeder extends Seeder
             'password'   => bcrypt($this->command->secret('Password')),
         ]);
 
+        $profile = Lighthouse\Profile::create([
+            'user_id' => $user->id,
+        ]);
+
         $user->assign('admin');
     }
 }

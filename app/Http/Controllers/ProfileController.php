@@ -3,6 +3,8 @@
 namespace Lighthouse\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Lighthouse\Profile;
+use Lighthouse\User;
 
 class ProfileController extends Controller
 {
@@ -45,10 +47,14 @@ class ProfileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    // public function show($id)
-    // {
-    //     //
-    // }
+    public function show($id)
+    {
+        $this->authorize('view');
+
+        $user = User::find(Profile::find($id)->user_id);
+
+        return view('profiles.show')->with(compact('user'));
+    }
 
     /*
      * Show the form for editing the specified resource.
